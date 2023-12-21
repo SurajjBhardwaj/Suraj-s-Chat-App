@@ -1,10 +1,11 @@
 import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement,  VStack, useToast } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   
+  // const navigate = useNavigate();
    const [show, setShow] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -50,6 +51,7 @@ const Login = () => {
           isClosable: true,
           position: "top",
         });
+       
         localStorage.setItem("userInfo", JSON.stringify(data));
         setLoading(false);
         history.push("/chats");
@@ -65,7 +67,9 @@ const Login = () => {
         });
         setLoading(false);
       }
-   };
+  };
+  
+    
 
    return (
      <VStack spacing={"5px"}>

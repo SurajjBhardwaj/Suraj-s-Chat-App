@@ -44,11 +44,13 @@ const registerUser = asyncHandler(async (req,res) => {
 
 
 const authUser = asyncHandler(async (req, res) => {
-  const {  email, password } = req.body;
+  const { email, password } = req.body;
+  console.log("okay");
 
   if (!email || !password) {
     res.status(400);
     throw new Error("please enter all the fields");
+    
   }
 
   const user = await User.findOne({ email });
@@ -63,6 +65,7 @@ const authUser = asyncHandler(async (req, res) => {
         message: "user logined",
     });
   } else {
+     console.log("okay2");
     res.status(400);
     throw new Error("failed to login");
   }
