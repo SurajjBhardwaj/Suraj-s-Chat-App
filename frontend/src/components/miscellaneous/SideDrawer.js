@@ -2,6 +2,7 @@ import { Avatar, Box, Button, Menu, MenuButton, MenuDivider, MenuItem, MenuList,
 import React, { useState } from 'react'
 import { BellIcon, ChevronDownIcon  } from "@chakra-ui/icons";
 import { ChatState } from '../../Context/ChatProvider';
+import ProfileModel from './ProfileModel';
 
 
 const SideDrawer = () => {
@@ -40,23 +41,27 @@ const SideDrawer = () => {
           <MenuButton p={1}>
             <BellIcon fontSize="2xl" m={1} />
           </MenuButton>
-{/* // menu list */}
+          {/* // menu list */}
         </Menu>
 
         <Menu>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
-            <Avatar size="sm" cursor="pointer" name={user.name} src={user.pic} ></Avatar>
+          <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+            <Avatar
+              size="sm"
+              cursor="pointer"
+              name={user.name}
+              src={user.pic}
+            ></Avatar>
           </MenuButton>
 
           <MenuList>
+            <ProfileModel user={user}>
+              <MenuItem>My Profile</MenuItem>
+            </ProfileModel>
 
-            <MenuItem>My Profile</MenuItem>
-            <MenuDivider/>
+            <MenuDivider />
             <MenuItem>Log Out</MenuItem>
-
           </MenuList>
-
-
         </Menu>
       </div>
     </Box>
