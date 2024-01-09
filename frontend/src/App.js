@@ -1,7 +1,9 @@
 // App.js
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from "./pages/HomePage";
 import ChatPage from "./pages/ChatPage";
+import "./App.css"; // Import your global styles
 
 function App() {
   return (

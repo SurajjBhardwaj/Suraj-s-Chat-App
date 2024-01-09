@@ -28,7 +28,7 @@ const HomePage = () => {
 
 
   return (
-    <Container maxW="xl" centerContent>
+    <Container maxW="xl" centerContent >
       <Box
         d="flex"
         justifyContent="center"
