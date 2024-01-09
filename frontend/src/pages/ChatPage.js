@@ -7,6 +7,7 @@ import { ChatState } from "../Context/ChatProvider";
 
 const ChatPage = () => {
   const { user } = ChatState();
+  console.log(user);
   const userName = user ? user.name : "";
 
   useEffect(() => {
